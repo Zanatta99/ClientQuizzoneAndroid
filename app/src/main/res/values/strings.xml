@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">ClientQuizzoneAndroid</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_prova">ProvaActivity</string>
+    <string name="cambio_ip_server">cambia indirizzo ip</string>
 </resources>
