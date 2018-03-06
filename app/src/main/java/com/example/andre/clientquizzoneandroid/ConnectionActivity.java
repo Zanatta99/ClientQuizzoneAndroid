@@ -1,5 +1,6 @@
 package com.example.andre.clientquizzoneandroid;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -14,20 +15,18 @@ public class ConnectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connection);
-        //callSocket();
-    }
+        Client c = new Client("localhost");
+        System.out.println("Ci provo");
+        c.creaConnessione();
+        System.out.println("Connessione creata");
 
-    private void callSocket()
-    {
-        try
-        {
-            InetAddress p = InetAddress.getByName("132.168.1.1");
-            int porta = 9999;
-
-            Socket s = new Socket(p, porta);
-
+        try {
+            c.attendi();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        Intent i = new Intent(ConnectionActivity.this, GameActivity.class);
+        startActivity(i);
     }
 }
