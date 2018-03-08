@@ -10,20 +10,30 @@ public class Client {
 	
 	private Socket s;
 	private String ip;
+	private int porta;
 
 	public Client(String ip)
 	{
 		this.ip = ip;
+		porta = 9999;
+	}
+
+	public Client(String ip, int porta)
+	{
+		this.ip = ip;
+		this.porta = porta;
 	}
 	
 	public void creaConnessione()
 	{
+		System.out.println("Ci provo");
 		try {
-			s= new Socket ("192.168.56.1", 9999);
+			s= new Socket ("192.168.56.1", porta);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println("Fatto");
 	}
 	
 	public void attendi() throws IOException{
