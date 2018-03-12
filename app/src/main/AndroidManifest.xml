@@ -20,7 +20,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".ConnectionActivity" />
-        <activity android:name=".GameActivity"></activity>
     </application>
 
 </manifest>
