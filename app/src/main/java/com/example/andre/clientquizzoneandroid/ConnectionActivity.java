@@ -21,16 +21,18 @@ import static android.support.design.widget.Snackbar.LENGTH_LONG;
 
 public class ConnectionActivity extends AppCompatActivity {
 
-    int cont;
-    ArrayList<Button> bottoni;
-    ArrayList<Domanda> domande = new ArrayList<>();
-    TextView textDomanda;
-    Client c;
+    private int cont;
+    private ArrayList<Button> bottoni;
+    private ArrayList<Domanda> domande = new ArrayList<>();
+    private TextView textDomanda;
+    private Client c;
+    private boolean uscita = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connection);
+        System.out.println("Connessione");
         SharedPreferences preferences = getSharedPreferences("Impostazioni", MODE_PRIVATE);
 
         if( preferences.getString("Ip", null) == null )
@@ -59,6 +61,7 @@ public class ConnectionActivity extends AppCompatActivity {
             System.out.println(c.isReady());
 
             setContentView(R.layout.activity_game);
+            System.out.println("Game");
 
             cont = 0;
             bottoni = new ArrayList<>();
@@ -131,11 +134,11 @@ public class ConnectionActivity extends AppCompatActivity {
         //if(conta != null && flag==false)
         //    conta.stop();
 
-        c.invio("$"+num+"$"+0+"$");
+        new GestioneInvio().execute(c, "$"+num+"$"+0+"$");
         System.out.println("Inviato");
 
         if(num == -1){
-            c.close();
+            //c.close();
             System.exit(0);
         }
 
@@ -155,6 +158,8 @@ public class ConnectionActivity extends AppCompatActivity {
 
             Intent i = new Intent( ConnectionActivity.this , ResultActivity.class );
             i.putExtras(extras);
+            c.close();
+            uscita = true;
             startActivity( i );
         }
 
@@ -163,7 +168,8 @@ public class ConnectionActivity extends AppCompatActivity {
     @Override
     protected void onStop()
     {
-        risposta(-1, false);
+        if( !uscita )
+            risposta(-1, false);
         super.onStop();
     }
 }

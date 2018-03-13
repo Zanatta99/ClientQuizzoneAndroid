@@ -20,12 +20,12 @@ public class GestioneConnessione extends AsyncTask {
     protected Object doInBackground(Object[] objects) {
 
 
-        publishProgress(10);
+        //publishProgress(10);
         System.out.println("Inizia");
         client.creaConnessione();
-        publishProgress(50);
+        //publishProgress(50);
 
-        publishProgress(100);
+        //publishProgress(100);
 
         return null;
     }

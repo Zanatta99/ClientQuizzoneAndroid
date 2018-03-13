@@ -11,4 +11,7 @@
     <string name="Attesa">Attendere</string>
     <string name="Connession_server">Connessione al server in corso</string>
     <string name="gioca_ancora">Gioca ancora</string>
+    <string name="vittoria">Vittoria</string>
+    <string name="pareggio">Pareggio</string>
+    <string name="sconfitta">Sconfitta</string>
 </resources>

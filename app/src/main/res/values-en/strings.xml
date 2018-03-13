@@ -9,4 +9,7 @@
     <string name="gioca_ancora">play again</string>
     <string name="Connession_server">Connection to the server in progress</string>
     <string name="Attesa">Attend</string>
+    <string name="vittoria">Win</string>
+    <string name="pareggio">Draw</string>
+    <string name="sconfitta">Defeat</string>
 </resources>
