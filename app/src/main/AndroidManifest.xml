@@ -19,7 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ConnectionActivity" />
+        <activity android:name=".ConnectionActivity"/>
+        <activity android:name=".ResultActivity" />
+        <activity android:name=".ChangeIpActivity"
+            android:parentActivityName=".StartActivity"/>
     </application>
 
 </manifest>

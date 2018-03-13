@@ -1,9 +1,10 @@
 package com.example.andre.clientquizzoneandroid;
 
 import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.widget.ProgressBar;
-
-import java.io.IOException;
 
 public class GestioneConnessione extends AsyncTask {
 
@@ -18,7 +19,9 @@ public class GestioneConnessione extends AsyncTask {
 
     protected Object doInBackground(Object[] objects) {
 
+
         publishProgress(10);
+        System.out.println("Inizia");
         client.creaConnessione();
         publishProgress(50);
 
@@ -27,10 +30,7 @@ public class GestioneConnessione extends AsyncTask {
         return null;
     }
 
-    protected void onProgressUpdate(int prog) {
+    private void onProgressUpdate(int prog) {
         barra.setProgress(prog);
-    }
-
-    protected void onPostExecute() {
     }
 }

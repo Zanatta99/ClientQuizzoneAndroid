@@ -12,7 +12,7 @@ public class Client implements Serializable{
 	private Socket s;
 	private String ip;
 	private int porta;
-	private boolean ready = false;
+	private boolean ready = false, prova = false;
 
 	private InputStreamReader isr;
 	private BufferedReader in;
@@ -31,10 +31,13 @@ public class Client implements Serializable{
 		this.porta = porta;
 	}
 	
-	public void creaConnessione()
+	public boolean creaConnessione()
 	{
+		boolean ret = true;
 		try {
+			System.out.println("Inizia");
 			s= new Socket (ip, porta);
+			System.out.println(s.getInetAddress().toString());
 
 			isr = new InputStreamReader(s.getInputStream());
 			in = new BufferedReader(isr);
@@ -42,22 +45,26 @@ public class Client implements Serializable{
 			out = new PrintWriter(s.getOutputStream(), true);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Provato");
+			ret = false;
 		}
+		prova = true;
+		System.out.println(prova);
+		return ret;
 	}
-	public boolean isConnected()
+	public int isConnected()
 	{
-		if(s == null)
-			return false;
+		if(s == null && !prova)
+			return -1;
+		else if ( s == null && prova )
+			return 0;
 		else
-			return s.isConnected();
+			return 1;
 	}
 	
 	public boolean attendi(){
 
-		int cont=0;
 		while(!ready){
-			System.out.println("Entrato");
 			InputStreamReader isr = null;
 			try {
 
@@ -65,11 +72,9 @@ public class Client implements Serializable{
 				if(t.equals("$Iniziamo!$")){
 					ready = true;
 				}
-				cont++;
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			System.out.println(ready + "  ready");
 		}
 
 		return ready;
@@ -100,7 +105,6 @@ public class Client implements Serializable{
 	public void invio(String n)
 	{
 		out.println(n);
-		System.out.println("Invio");
 	}
 	
 	public void close() {

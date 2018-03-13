@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QUIZZONE</string>
+    <string name="cambio_ip_server">Change ip address</string>
+    <string name="Quizzone">Quizzone</string>
+    <string name="Avvio">Start the game</string>
+    <string name="cambio_ip">Enter the server\'s IP address:</string>
+    <string name="Conferma">Confirm</string>
+    <string name="gioca_ancora">play again</string>
+    <string name="Connession_server">Connection to the server in progress</string>
+    <string name="Attesa">Attend</string>
+</resources>

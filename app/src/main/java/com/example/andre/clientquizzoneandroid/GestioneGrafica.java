@@ -1,13 +1,9 @@
 package com.example.andre.clientquizzoneandroid;
 
 import android.os.AsyncTask;
-import android.widget.Button;
-import android.widget.TextView;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.xml.transform.dom.DOMLocator;
 
 public class GestioneGrafica extends AsyncTask {
 
@@ -17,9 +13,7 @@ public class GestioneGrafica extends AsyncTask {
         Client c = (Client) objects[0];
         ArrayList<Domanda> d = (ArrayList) objects[1];
 
-
-        d.add( new Domanda( c.getText()) );
-        System.out.println("Fatto");
+        d.add( new Domanda(c.getText()) );
         return null;
     }
 }

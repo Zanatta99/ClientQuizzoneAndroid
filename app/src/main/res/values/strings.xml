@@ -1,6 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ClientQuizzoneAndroid</string>
+    <string name="app_name">QUIZZONE</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_prova">ProvaActivity</string>
-    <string name="cambio_ip_server">cambia indirizzo ip</string>
+    <string name="cambio_ip_server">Cambia indirizzo ip</string>
+    <string name="Quizzone">Quizzone</string>
+    <string name="Avvio">Avvia il gioco</string>
+    <string name="cambio_ip">Inserisci l\'indirizzo IP del server:</string>
+    <string name="Conferma">Conferma</string>
+    <string name="Attesa">Attendere</string>
+    <string name="Connession_server">Connessione al server in corso</string>
+    <string name="gioca_ancora">Gioca ancora</string>
 </resources>
