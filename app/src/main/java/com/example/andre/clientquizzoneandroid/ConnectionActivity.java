@@ -2,11 +2,6 @@ package com.example.andre.clientquizzoneandroid;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,9 +10,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import static android.support.design.widget.Snackbar.LENGTH_LONG;
 
 public class ConnectionActivity extends AppCompatActivity {
 
@@ -31,8 +23,8 @@ public class ConnectionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_connection);
-        System.out.println("Connessione");
         SharedPreferences preferences = getSharedPreferences("Impostazioni", MODE_PRIVATE);
 
         if( preferences.getString("Ip", null) == null )
@@ -40,9 +32,7 @@ public class ConnectionActivity extends AppCompatActivity {
         else
             c = new Client(preferences.getString("Ip", null));
 
-        ProgressBar barra = findViewById(R.id.progresso);
-
-        new GestioneConnessione(c, barra).execute();
+        new GestioneConnessione(c).execute();
 
         while( c.isConnected() == -1 );
 
@@ -149,8 +139,6 @@ public class ConnectionActivity extends AppCompatActivity {
             caricamento();
 
         }else {
-            String s = "";
-
             Bundle extras = new Bundle();
 
             new RiceviRisultati().execute( c, extras);

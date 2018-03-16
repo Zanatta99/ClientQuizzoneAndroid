@@ -24,6 +24,7 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(StartActivity.this, ConnectionActivity.class);
+                setContentView(R.layout.activity_connection);
                 startActivity(i);
             }
         });

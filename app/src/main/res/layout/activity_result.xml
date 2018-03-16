@@ -34,16 +34,17 @@
 
     <TextView
         android:id="@+id/textViewPunteggio"
-        android:layout_width="153dp"
+        android:layout_width="58dp"
         android:layout_height="60dp"
-        android:text="Punteggio"
         android:gravity="center"
-        android:textSize="30dp"
+        android:text=""
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.966"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.676" />
+        app:layout_constraintVertical_bias="0.658" />
 
     <ImageView
         android:id="@+id/image"
@@ -55,5 +56,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.278"
         app:srcCompat="@drawable/vittoria" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="303dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="@string/indovinato"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.658" />
 
 </android.support.constraint.ConstraintLayout>
