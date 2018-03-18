@@ -12,5 +12,6 @@
     <string name="vittoria">Victory</string>
     <string name="sconfitta">Lost</string>
     <string name="pareggio">Draw</string>
-    <string name="indovinato">Guess questions:</string>
+    <string name="risultato">Result:</string>
+    <string name="indovinato">Answers guess</string>
 </resources>

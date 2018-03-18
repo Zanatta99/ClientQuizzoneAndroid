@@ -14,5 +14,6 @@
     <string name="vittoria">Vittoria</string>
     <string name="pareggio">Pareggio</string>
     <string name="sconfitta">Sconfitta</string>
-    <string name="indovinato">Domande indovinate:</string>
+    <string name="risultato">Risultato:</string>
+    <string name="indovinato">Risposte indovinate:</string>
 </resources>
